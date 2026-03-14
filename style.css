@@ -1,0 +1,243 @@
+/* ================= FONTS & RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navbar .logo-link img {
+  height: 80px; /* logo plus grand */
+  transition: transform 0.3s;
+}
+
+.navbar .logo-link img:hover {
+  transform: scale(1.05);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+  margin-right: 55px; /* <-- ajuste la position des liens */
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #142846d9;
+}
+
+.navbar nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #142846d9;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown Shop */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  min-width: 180px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #222;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #142846d9;
+  color: #fff;
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #0a1428d9, #142846d9), 
+              url('images/hero-bg.jpg') center/cover no-repeat;
+  color: #fff;
+}
+
+.hero h1, .hero p {
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+}
+
+.hero .btn {
+  padding: 12px 35px;
+  background-color: #142846d9;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hero .btn:hover {
+  background-color: #0a1428d9;
+  transform: scale(1.05);
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 80px 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ================= CARDS ================= */
+.card, .product {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img, .product img {
+  width: 100%;
+  display: block;
+}
+
+.card:hover, .product:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-description {
+  padding: 15px;
+}
+
+.product-description h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.product-description p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ================= ABOUT ================= */
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 40px 50px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+
+footer a {
+  color: #528ce4d9;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+/* ================= REVEAL ANIMATION ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= ANIMATION HERO ================= */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
